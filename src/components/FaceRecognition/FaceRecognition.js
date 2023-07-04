@@ -3,7 +3,6 @@ import './FaceRecognition.css';
 
 const FaceRecognition = ({ imageUrl, box }) => {
 
-	{/*
 	return (
 		<div className='center ma'>
 			<div className='absolute mt2'>
@@ -21,9 +20,9 @@ const FaceRecognition = ({ imageUrl, box }) => {
 			</div>
 		</div>
 		);
-	*/}
-
 	
+
+	{/*
 	return (
 		<div className='center ma'>
 			<div className='absolute mt2'>
@@ -34,6 +33,7 @@ const FaceRecognition = ({ imageUrl, box }) => {
 			</div>
 		</div>
 		);
+		*/}
 	
 
 }

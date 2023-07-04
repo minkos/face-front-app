@@ -267,7 +267,7 @@ class App extends Component {
       }}
     />
 
-      {/* <Navigation onRouteChange={this.onRouteChange} isSignedIn={isSignedIn} /> */}
+      <Navigation onRouteChange={this.onRouteChange} isSignedIn={isSignedIn} />
       { route === 'home' 
         ? <div>  
             <Logo />

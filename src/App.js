@@ -58,6 +58,49 @@ class App extends Component {
   }
 
   calculateFaceLocation = (data) => {
+
+    if (data && data.outputs) {
+      // const clarifaiFace = data.outputs[0].data.regions[0].region_info.bounding_box;
+
+      const allRegions = data.outputs[0].data.regions;
+      // console.log(data.outputs[0].data.regions);
+      // App.js is the parent here. When i have import FaceRecognition here in App.js, i can get its...
+      //... respective id.
+      /*
+    const image = document.getElementById('inputimage');
+    const width = Number(image.width);
+    const height = Number(image.height);
+    
+    return {
+      leftCol: clarifaiFace.left_col * width, //clarifaiFace.left_col is the % of width, so * by width
+      topRow: clarifaiFace.top_row * height,
+      rightCol: width - (clarifaiFace.right_col * width), //with respect from the left side.
+      bottomRow: height - (clarifaiFace.bottom_row * height) //with respect from the top
+    }
+    */
+
+      // Need to persist your mappings
+      const finalRegions = allRegions.map((face) => {
+        const clarifaiFace = face.region_info.bounding_box;
+
+        const image = document.getElementById("inputimage");
+        const width = Number(image.width);
+        const height = Number(image.height);
+
+        return {
+          leftCol: clarifaiFace.left_col * width, //clarifaiFace.left_col is the % of width, so * by width
+          topRow: clarifaiFace.top_row * height,
+          rightCol: width - clarifaiFace.right_col * width, //with respect from the left side.
+          bottomRow: height - clarifaiFace.bottom_row * height, //with respect from the top
+        };
+      });
+
+      return finalRegions;
+    }
+    return;
+
+
+    /*
     const clarifaiFace = data.outputs[0].data.regions[0].region_info.bounding_box;
     // App.js is the parent here. When i have import FaceRecognition here in App.js, i can get its...
     //... respective id.
@@ -70,6 +113,8 @@ class App extends Component {
       rightCol: width - (clarifaiFace.right_col * width), //with respect from the left side.
       bottomRow: height - (clarifaiFace.bottom_row * height) //with respect from the top
     }
+    */
+
   }
 
   displayFaceBox = (box) => {
@@ -222,7 +267,7 @@ class App extends Component {
       }}
     />
 
-      <Navigation onRouteChange={this.onRouteChange} isSignedIn={isSignedIn} />
+      {/* <Navigation onRouteChange={this.onRouteChange} isSignedIn={isSignedIn} /> */}
       { route === 'home' 
         ? <div>  
             <Logo />

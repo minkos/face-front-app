@@ -51,6 +51,7 @@ class Signin extends React.Component {
 			<main className="pa4 black-80">
 
 			<div className="measure">
+			<legend className="f1 fw6 ph0 mh0">Can't find those faces in the open spaces? Let Artificial Intelligence do that for you.</legend>
 				<div className="">
 			      <input 
 			      	  //onClick={() => onRouteChange('home')} //arrow function will be run when clicked

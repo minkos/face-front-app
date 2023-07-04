@@ -25,6 +25,7 @@ class Register extends React.Component {
 	}
 
 	onSubmitRegister = () => {
+		
 		fetch('https://stormy-temple-70795.herokuapp.com/register', {
 			method: 'post',
 			headers: {"Content-Type": "application/json"},
@@ -41,6 +42,7 @@ class Register extends React.Component {
 				this.props.onRouteChange('home');
 			}
 		})
+		
 	}
 
 	render() {

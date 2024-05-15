@@ -6,7 +6,9 @@ const ImageLinkForm = ({ onInputChange, onButtonSubmit }) => {
 	return (
 		<div>
 			<p className='f3'>
-				{'This application will detect faces in your pictures. Just provide an image link in JPEG format!'}
+				{'This application will detect faces in your pictures. The image link MUST end with .jpeg or .jpg!'}
+				{'For example, https://www.online-tech-tips.com/wp-content/uploads/2022/02/faces.jpeg'}
+				{'or, https://st4.depositphotos.com/6903990/27898/i/450/depositphotos_278981062-stock-photo-beautiful-young-woman-clean-fresh.jpg'}
 			</p>
 			<div className='center'>
 				<div className='form center pa4 br3 shadow-5'>

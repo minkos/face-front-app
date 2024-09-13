@@ -12,14 +12,6 @@ import Rank from './components/Rank/Rank';
 import Particles from "react-tsparticles";
 //import Clarifai from 'clarifai'; //move clarifai to the backend (api)
 
-/*
-// Move to backend.
-
-const app = new Clarifai.App({
-  apiKey: 'da15187eb5694a0fb22b164ba4dd2757'
-});
-*/
-
 const initialState = {
       input: '',
       imageUrl: '',
